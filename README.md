@@ -1,4 +1,4 @@
-# EDAL POC – Ephemeral Data Access Layer (BugRaid.AI Assessment)
+# EDAL POC – Ephemeral Data Access Layer (BugRaid.AI)
 
 This repo implements a Proof-of-Concept **EDAL** service for telemetry ingestion, anomaly detection, and AI-driven incident response.
 
