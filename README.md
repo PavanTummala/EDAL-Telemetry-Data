@@ -57,7 +57,7 @@ Before processing, EDAL checks if the hash matches the stored value
 
 This guarantees no duplicate signals even if the same file is re-uploaded.
 
-## Acceptance Criteria ✅
+## Acceptance Criteria
 
 Processes 1GB in <5 min (tested with synthetic data batches)
 
