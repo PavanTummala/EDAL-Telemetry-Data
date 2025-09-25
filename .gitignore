@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+venv/
+.env/
+.envrc
+
+# macOS
+.DS_Store
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# VS Code
+.vscode/
+
+# Test, coverage, and cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment files
+example.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Other
+*.sqlite3
+*.db
+*.bak
+*.swp
+*.swo
+
+# Ignore localstack data
+localstack/

@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  localstack:
+    image: localstack/localstack:2.3
+    environment:
+      - SERVICES=s3,kinesis,sqs
+      - DEBUG=1
+    ports:
+      - "4566:4566"
+
+  mongo:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  edal-service:
+    build: .
+    environment:
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+      - MONGO_URI=mongodb://mongo:27017/edal
+      - S3_BUCKET=telemetry-bucket
+      - KINESIS_STREAM=telemetry-signals
+      - SQS_QUEUE=telemetry-fallback
+      - PYTHONPATH=/app
+    depends_on:
+      - localstack
+      - mongo
+    volumes:
+      - .:/app
+      - /dev/shm:/tmp  # ephemeral (tmpfs)
+
+volumes:
+  mongo_data:
