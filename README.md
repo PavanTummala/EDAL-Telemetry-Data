@@ -69,7 +69,7 @@ Signals published to Kinesis with evidence pointers
 
 ## Logic 
 
-This project is built on a stateless, streaming-first architecture. The core idea is to treat the EDAL service as an ephemeral processing layer that analyzes data in-flight without needing to store the raw telemetry itself.
+This project is built on a stateless,Polling based streaming-first architecture. The core idea is to treat the EDAL service as an ephemeral processing layer that analyzes data in-flight without needing to store the raw telemetry itself.
 
 **Key principles of this approach include:**
 
